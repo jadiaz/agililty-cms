@@ -1,6 +1,10 @@
-const allModules: {name: string, module: JSX.Element}[] = [];
+import RichTextArea from "./RichTextArea";
 
-export const getModule = (moduleName: string) => {
+const allModules = [
+  { name: "RichTextArea", module: RichTextArea }
+]
+
+export const getModule = (moduleName: string): any | null => {
   if (!moduleName) return null;
 
   const obj = allModules.find( m => m.name.toLowerCase() === moduleName.toLowerCase() );
